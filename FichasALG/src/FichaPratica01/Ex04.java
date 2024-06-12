@@ -11,6 +11,7 @@ public class Ex04 {
         Scanner in = new Scanner(System.in);
         System.out.println("Introduza o raio.");
         int raio = in.nextInt();
+
         double perimetro = 2.0 * pi * (double)raio;
         double area = 2.0 * pi * (double)raio * (double)raio;
         System.out.println("Perimetro: " + perimetro + "cm");

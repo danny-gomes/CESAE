@@ -10,9 +10,11 @@ public class Ex01 {
         Scanner input = new Scanner(System.in);
         System.out.println("Insira um numero");
         int num1 = input.nextInt();
+
         System.out.println("Insira outro numero");
         int num2 = input.nextInt();
         int soma = num1 + num2;
+
         System.out.println("Soma: " + soma);
     }
 }
