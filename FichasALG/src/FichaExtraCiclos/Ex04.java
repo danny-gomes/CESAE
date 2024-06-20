@@ -4,8 +4,8 @@ public class Ex04 {
     public static void main(String[] args) {
         String car = "*";
         int linhasImprimirBloco = 30;
-        int linhasImprimirEscada = 5;
-        int baseArvore = 9;
+        int linhasImprimirEscada = 20;
+        int baseArvore = 10;
 
         System.out.println("4.1");
         for (int i = 1; i <= linhasImprimirBloco; i++) {
@@ -30,14 +30,15 @@ public class Ex04 {
 
         for (int i = 0; i < baseArvore; i++) {
             for (int j = 0; j < baseArvore; j++) {
-                System.out.print(" ");
                 if(j == pontoAoMeio - i){
                     for(int z = 0; z < (i*2 + 1); z++){
-                        System.out.println(car);
+                        System.out.print(car);
                     }
+                } else {
+                    System.out.print(" ");
                 }
             }
-
+            System.out.print("\n");
             /*
                 j = 1;         4 x
                 j= 3;        3 4 5 x
