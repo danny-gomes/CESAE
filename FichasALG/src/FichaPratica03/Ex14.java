@@ -5,11 +5,27 @@ import java.util.Scanner;
 public class Ex14 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String mensagem = "";
+        int numAtual, numAnt, qtdNums;
+        boolean isCrescente = true;
 
-        int num = in.nextInt();
-        mensagem = mensagem +  in.nextLine();
+        System.out.println("Quantos numeros quer inserir?");
+        qtdNums = in.nextInt();
+        System.out.println("Introduza um numero");
+        numAnt = in.nextInt();
 
-        System.out.println(mensagem);
+        for(int i = 0; i < qtdNums - 1; i++){
+            System.out.println("Outro.");
+            numAtual = in.nextInt();
+            if(numAtual < numAnt){
+                isCrescente = false;
+            }
+            numAnt = numAtual;
+        }
+
+        if(isCrescente){
+            System.out.println("Crescente");
+        } else {
+            System.out.println("Nao Cresecente");
+        }
     }
 }
