@@ -28,57 +28,36 @@ public class Ex17 {
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (matriz[i][j] < menor) {
+                    menor = matriz[i][j];
                     linhaMenor = i;
                     colMenor = j;
                 }
 
                 if (matriz[i][j] > maior) {
+                    maior = matriz[i][j];
                     linhaMaior = i;
                     colMaior = j;
                 }
             }
         }
 
-        int linhaNovaMaior = 0;
-        int colNovaMaior = 0;
-        int linhaNovaMenor = 0;
-        int colNovaMenor = 0;
+        int novoValor = matriz[0][0];
 
-        if (linhaMaior == 0 || linhaMaior == 1) {
-            linhaNovaMaior = linhaMaior + 1;
-        } else if (linhaMaior == 2) {
-            linhaNovaMaior = linhaMaior - 1;
-        }
-
-        if (colMaior == 0 || colMaior == 1) {
-            colNovaMaior = colMaior + 1;
-        } else if (colMaior == 2) {
-            colNovaMaior = colMaior - 1;
-        }
-
-        if (linhaMenor == 0 || linhaMenor == 1) {
-            linhaNovaMenor = linhaMenor + 1;
-        } else if (linhaMenor == 2) {
-            linhaNovaMenor = linhaMenor - 1;
-        }
-
-        if (colMenor == 0 || colMenor == 1) {
-            colNovaMenor = colMenor + 1;
-        } else if (colMenor == 2) {
-            colNovaMenor = colMenor - 1;
-        }
-
-        matriz[linhaMaior][colMaior] = matriz[linhaNovaMaior][colNovaMaior];
-        matriz[linhaMenor][colMenor] = matriz[linhaNovaMenor][colNovaMenor];
-
-        System.out.println("0000000000");
         for(int i = 0; i < linhas; i++){
             for(int j = 0; j < matriz[i].length; j++){
-                System.out.print(matriz[i][j] + "\t");
+                if(matriz[i][j] < maior && matriz[i][j] > menor){
+                    novoValor = matriz[i][j];
+                    maior = matriz[i][j];
+                    menor = matriz[i][j];
+                    break;
+                }
             }
-            System.out.print("\n");
         }
 
+
+
+        matriz[linhaMaior][colMaior] = novoValor;
+        matriz[linhaMenor][colMenor] = novoValor;
 
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
