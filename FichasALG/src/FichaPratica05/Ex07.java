@@ -5,14 +5,18 @@ import java.util.Scanner;
 public class Ex07 {
     public static void main(String[] args) {
         int tamanho = 10;
+        int maior = 0;
         int[] arr = new int[tamanho];
         Scanner in = new Scanner(System.in);
         for(int i = 0; i < arr.length; i++){
             System.out.println("Introduza um valor " + i);
             arr[i] = in.nextInt();
+            if(arr[i] % 2 == 0){
+                maior = arr[i];
+            }
         }
 
-        int maior = 0;
+
         boolean hasPar = false;
         for(int i = 0; i < arr.length; i++){
             if(arr[i] % 2 == 0){
