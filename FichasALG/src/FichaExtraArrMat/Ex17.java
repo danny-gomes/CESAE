@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ex17 {
     public static void main(String[] args) {
-        System.out.println("MAIOR E MENOR MATRIZ");
+        System.out.println("SEGUNDO MAIOR E SEGUNDO MENOR MATRIZ");
         Scanner in = new Scanner(System.in);
         int colunas = 3;
         int linhas = 3;
