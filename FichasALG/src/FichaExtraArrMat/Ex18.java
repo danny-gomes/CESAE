@@ -38,9 +38,13 @@ public class Ex18 {
         }
 
         System.out.println("Matriz Transposta:");
-        for (int i = 0; i < matrizTransposta.length; i++) {
-            for (int j = 0; j < matrizTransposta[i].length; j++) {
-                System.out.print(matrizTransposta[i][j] + "\t");
+        imprimirMatriz(matrizTransposta);
+    }
+
+    public static void imprimirMatriz(int[][] matriz){
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + "\t");
             }
             System.out.println();
         }
