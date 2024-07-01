@@ -2,6 +2,8 @@ package FichaPratica06;
 
 import java.util.Scanner;
 
+import static FichaPratica06.Ex03.*;
+
 public class Ex04 {
     public static void main(String[] args) {
         System.out.println("ANALISE DE UM NUMERO");
@@ -19,19 +21,39 @@ public class Ex04 {
             opcao = in.nextInt();
             switch (opcao) {
                 case 1:
-                    boolean isPar = checkParidade(num);
+                    if (checkParidade(num)) {
+                        System.out.println("Numero Par.");
+                    } else {
+                        System.out.println("Numero Impar");
+                    }
                     break;
                 case 2:
-                    boolean isPositivo = checkSinal(num);
+                    if (checkSinal(num)) {
+                        System.out.println("Numero Positivo.");
+                    } else {
+                        System.out.println("Numero Negativo");
+                    }
                     break;
                 case 3:
-                    boolean isPrimo = checkPrimo(num);
+                    if (checkPrimo(num)) {
+                        System.out.println("Numero Primo.");
+                    } else {
+                        System.out.println("Numero nao Primo");
+                    }
                     break;
                 case 4:
-                    boolean isPerfeito = checkPerfeito(num);
+                    if (checkPerfeito(num)) {
+                        System.out.println("Numero Perfeito.");
+                    } else {
+                        System.out.println("Numero nao Perfeito");
+                    }
                     break;
                 case 5:
-                    boolean isTriangular = checkTriangular(num);
+                    if (checkTriangular(num)) {
+                        System.out.println("Numero Triangular.");
+                    } else {
+                        System.out.println("Numero nao Triangular");
+                    }
                     break;
                 case 6:
                     System.out.println("Introduza novo numero");
@@ -42,79 +64,9 @@ public class Ex04 {
                 default:
                     System.out.println("Opcao Invalida");
             }
+            System.out.println("\n");
         } while (opcao != 7);
     }
 
-    private static boolean checkTriangular(int num) {
-        int count = 0;
-        int soma = 0;
-        while(soma < num){
-            soma = soma + count;
-            count++;
-        }
-        if(soma == num){
-            System.out.println("Numero Triangular");
-            return true;
-        }
 
-        System.out.println("Numero nao Triangular");
-        return false;
-    }
-
-    private static boolean checkPerfeito(int num) {
-        int somaDiv = 0;
-        for(int i = num / 2; i > 0; i--){
-            if(num % i == 0){
-                somaDiv = somaDiv + i;
-            }
-        }
-
-        if(somaDiv == num){
-            System.out.println("Numero Perfeito");
-            return true;
-        }
-
-        System.out.println("Nao Perfeito");
-        return false;
-    }
-
-    private static boolean checkPrimo(int num) {
-        boolean isPrimo = true;
-        for (int i = num / 2; i > 1; i--) {
-            if (num % i == 0) {
-                isPrimo = false;
-                break;
-            }
-        }
-        if (isPrimo && num != 0) {
-            System.out.println("Numero Primo");
-            return true;
-        } else {
-            System.out.println("Numero nao Primo.");
-            return false;
-        }
-    }
-
-    private static boolean checkSinal(int num) {
-        if (num < 0) {
-            System.out.println("Numero Negativo");
-            return false;
-        } else if (num > 0) {
-            System.out.println("Numero Positivo");
-            return true;
-        } else {
-            System.out.println("Zero");
-            return true;
-        }
-    }
-
-    private static boolean checkParidade(int num) {
-        if (num % 2 == 0) {
-            System.out.println("Numero Par");
-            return true;
-        } else {
-            System.out.println("Numero Impar.");
-            return false;
-        }
-    }
 }
