@@ -85,10 +85,10 @@ public class Ex11 {
         }
 
         // Verificar vencedor verticalemente
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (jogo[j][i].equals(jogo[j][i + 1])) {
-                    if (i == 1) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 2; j++) {
+                if (jogo[j][i].equals(jogo[j + 1][i])) {
+                    if (j == 1) {
                         return true;
                     }
                 } else {
@@ -113,6 +113,7 @@ public class Ex11 {
     private static boolean jogada(String[][] jogo, int jogadaJogador, int[] posicoes, String carJogador) {
         if (posicoes[jogadaJogador - 1] == 0) {
             System.out.println("Posicao ja preenchida.");
+            return false;
         } else {
             if (jogadaJogador < 4) {
                 jogo[0][jogadaJogador - 1] = carJogador;
