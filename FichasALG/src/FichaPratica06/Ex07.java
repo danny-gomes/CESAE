@@ -2,7 +2,7 @@ package FichaPratica06;
 
 public class Ex07 {
     public static void main(String[] args) {
-        quadrado("x", 4, 7);
+        quadrado("o", 5, 10);
     }
 
     public static void quadrado(String car, int linhas, int colunas){
