@@ -10,7 +10,6 @@ public class ex09 {
         try {
             Scanner in = new Scanner(System.in);
             int linhas = lerLinhasFicheiro();
-            System.out.println("xxxx");
             String[][] ficheiroMusicaMatriz = new String[linhas][colunas];
             lerFicheiro(ficheiroMusicaMatriz);
 
