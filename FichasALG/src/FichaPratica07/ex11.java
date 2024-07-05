@@ -11,7 +11,7 @@ public class ex11 {
         Scanner inConsola = new Scanner(System.in);
         System.out.println("Introduza o mes para verificar eventos.");
         String mesEventos = inConsola.next();
-
+        boolean encontradoEvento = false;
 
         in.nextLine();
 
@@ -26,11 +26,16 @@ public class ex11 {
             String lotacao = conteudoLinha[4];
 
             if(mes.equalsIgnoreCase(mesEventos)){
+                encontradoEvento = true;
                 System.out.println(evento);
                 System.out.println("\t" + dia + " de " + mes + " " + ano);
                 System.out.println("\tLotacao: " + lotacao);
             }
 
+        }
+
+        if(!encontradoEvento){
+            System.out.println("Nao foram encontrados eventos para esse mes.");
         }
     }
 }
