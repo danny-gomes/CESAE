@@ -14,7 +14,8 @@ public class ex10 {
         int linhas = lerLinhasFicheiro();
         int colunas = 5;
         String[][] ficheiroFormandosMatriz = new String[linhas][colunas];
-        lerFicheiro(ficheiroFormandosMatriz);
+        String path = "Dados/ex10.csv";
+        lerFicheiro(path, ficheiroFormandosMatriz);
 
         do {
             System.out.println("\nEscolha uma opcao:");
@@ -56,7 +57,7 @@ public class ex10 {
                     }
                     break;
                 case 5:
-                    gravarFicheiro(ficheiroFormandosMatriz);
+                    gravarFicheiro(path, ficheiroFormandosMatriz);
                     break;
                 default:
                     System.out.println("Opcao invalida.");
@@ -374,8 +375,8 @@ public class ex10 {
         return linhas;
     }
 
-    private static void lerFicheiro(String[][] ficheiroMatriz) throws FileNotFoundException {
-        File ficheiroFormandos = new File("Dados/ex10.csv");
+    private static void lerFicheiro(String path, String[][] ficheiroMatriz) throws FileNotFoundException {
+        File ficheiroFormandos = new File(path);
         Scanner in = new Scanner(ficheiroFormandos);
 
         in.nextLine();
@@ -394,8 +395,8 @@ public class ex10 {
 
     }
 
-    private static void gravarFicheiro(String[][] ficheiroFormandosMatriz) throws FileNotFoundException {
-        File ficheiroEscrita = new File("Dados/ex10.csv");
+    private static void gravarFicheiro(String path, String[][] ficheiroFormandosMatriz) throws FileNotFoundException {
+        File ficheiroEscrita = new File(path);
         PrintWriter pw = new PrintWriter(ficheiroEscrita);
 
         pw.println("nome,numero,curso,email,idade");
