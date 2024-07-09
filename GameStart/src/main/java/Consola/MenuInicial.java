@@ -5,7 +5,7 @@ import java.util.Scanner;
 import static FuncoesUtilitarias.Utils.imprimirMatriz;
 import static LeituraEscrita.ImportarFicheiros.lerFicheiro;
 
-public class Menu {
+public class MenuInicial {
 
     static String[][] vendas;
     static String pathVendas = "Dados/GameStart_Vendas.csv";
