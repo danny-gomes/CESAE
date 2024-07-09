@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 import static Consola.Admin.loginAdmin;
 import static Consola.Admin.menuAdmin;
+import static Consola.Cliente.menuCliente;
 import static Dados.ImportarFicheiros.lerFicheiro;
 import static FuncoesUtilitarias.Utils.imprmirMatriz;
 
 public class MenuInicial {
 
     public static void main(String[] args) {
+        /*********** DADOS E VARIÁVEIS PERTINENTES ***********/
         String pathVendas = "Dados/GameStart_Vendas.csv";
         String[][] vendas = lerFicheiro(pathVendas, 6, true);
 
@@ -25,6 +27,10 @@ public class MenuInicial {
         int tentativasOpcao = 0;
 
         Scanner inTeclado = new Scanner(System.in);
+        /********************************************/
+
+
+        /*********** MENU CLIENTE-ADMIN ***********/
 
         System.out.println("\n" +
                 " _____                          _____  _                 _      \n" +
@@ -59,6 +65,10 @@ public class MenuInicial {
                 System.out.println("\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80 Precisas de óculos ?? \uD83D\uDC80\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80");
             }
         }
+        /********************************************/
+
+
+        /*********** MENU ADMIN ***********/
 
         if(opcao == 1) {
             System.out.print("\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB Username: ");
@@ -82,6 +92,9 @@ public class MenuInicial {
 
                 menuAdmin();
             }
+        } else {
+            /*********** MENU CLIENTE ***********/
+            menuCliente();
         }
 
     }
