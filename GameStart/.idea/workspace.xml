@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3053502-e771-446f-8bc0-acdccae76993" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consola/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Consola/MenuInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/MenuInicial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LeituraEscrita/ImportarFicheiros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LeituraEscrita/ImportarFicheiros.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.MenuInicial.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -54,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720533988639</updated>
-      <workItem from="1720533991955" duration="618000" />
+      <workItem from="1720533991955" duration="2991000" />
     </task>
     <servers />
   </component>

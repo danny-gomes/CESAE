@@ -2,25 +2,25 @@ package Consola;
 
 import java.util.Scanner;
 
-import static FuncoesUtilitarias.Utils.imprimirMatriz;
-import static LeituraEscrita.ImportarFicheiros.lerFicheiro;
+import static Consola.Admin.loginAdmin;
+import static Consola.Admin.menuAdmin;
+import static Dados.ImportarFicheiros.lerFicheiro;
+import static FuncoesUtilitarias.Utils.imprmirMatriz;
 
 public class MenuInicial {
 
-    static String[][] vendas;
-    static String pathVendas = "Dados/GameStart_Vendas.csv";
-    static String[][] clientes;
-    static String pathClientes = "Dados/GameStart_Clientes.csv";
-    static String[][] comissoes;
-    static String pathComissoes = "Dados/GameStart_Categorias.csv";
-    static String[][] acessoAdmin;
-    static String pathAdmin = "Dados/GameStart_Admins.csv";
-
     public static void main(String[] args) {
-        vendas = lerFicheiro(pathVendas, 6, true);
-        clientes = lerFicheiro(pathClientes, 4, true);
-        comissoes = lerFicheiro(pathComissoes, 2, true);
-        acessoAdmin = lerFicheiro(pathAdmin, 2, false);
+        String pathVendas = "Dados/GameStart_Vendas.csv";
+        String[][] vendas = lerFicheiro(pathVendas, 6, true);
+
+        String pathClientes = "Dados/GameStart_Clientes.csv";
+        String[][] clientes = lerFicheiro(pathClientes, 4, true);
+
+        String pathComissoes = "Dados/GameStart_Categorias.csv";
+        String[][] comissoes = lerFicheiro(pathComissoes, 2, true);
+
+        String pathAdmin = "Dados/GameStart_Admins.csv";
+        String[][] acessoAdmin = lerFicheiro(pathAdmin, 2, false);
         int opcao;
         int tentativasOpcao = 0;
 
@@ -43,10 +43,10 @@ public class MenuInicial {
         System.out.println("2. Cliente \uD83D\uDE4B\uD83C\uDFFB\u200D♂\uFE0F");
 
         opcao = inTeclado.nextInt();
-
+       // opcao = 1;
         // ADICIONAR OPCAO SAIR ?????
 
-        while (opcao != 1 || opcao != 2) {
+        while (opcao != 1 && opcao != 2) {
             System.out.println("\n");
             System.out.println("Opção inválida, tenta outra vez (¬_¬\")");
             System.out.println("1. Admin \uD83D\uDEE0\uFE0F");
@@ -54,16 +54,35 @@ public class MenuInicial {
             opcao = inTeclado.nextInt();
             tentativasOpcao++;
 
-            if(tentativasOpcao == 2){
+            if (tentativasOpcao == 2) {
                 System.out.println("\n");
                 System.out.println("\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80 Precisas de óculos ?? \uD83D\uDC80\uD83D\uDC80\uD83D\uDC80\uD83D\uDC80");
             }
         }
 
         if(opcao == 1) {
+            System.out.print("\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB Username: ");
+            inTeclado.nextLine();
+            String username = inTeclado.nextLine();
 
+            System.out.print("\uD83D\uDD12 Password: ");
+            String password = inTeclado.nextLine();
+
+            if(loginAdmin(acessoAdmin, username, password)){
+                menuAdmin();
+            } else {
+                do{
+                    System.out.println("\n⛔ LOGIN INVÁLIDO ⛔\n");
+                    System.out.print("\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB Username: ");
+                    username = inTeclado.nextLine();
+
+                    System.out.print("\uD83D\uDD12 Password: ");
+                    password = inTeclado.nextLine();
+                }while(!loginAdmin(acessoAdmin, username, password));
+
+                menuAdmin();
+            }
         }
-
 
     }
 }
