@@ -26,7 +26,7 @@ public class Admin {
         System.out.println("e. Jogo Mais Caro");
         System.out.println("f. Melhores Clientes");
         System.out.println("g. Categoria com Mais Lucro");
-        System.out.println("h. Pesquisa Vendas de Jogo");
+        System.out.println("h. Pesquisa Clientes Compraram Jogo");
         System.out.println("i. Top 5 Jogos (Lucro Gerado)");
         System.out.println("j. Bottom 5 Jogos (Lucro Gerado)");
         System.out.println("z. Sair");
@@ -91,20 +91,32 @@ public class Admin {
                     // 91;Daniel Gomes;910000097;costuras.gomes@gmail.com
                     double[][] comprasClientes = totalGastoPorCliente(vendas);
                     String[] maioresClientes = melhorClientes(comprasClientes);
-                    for(int i = 0; i < maioresClientes.length; i++){
-                        imprimirJogosCompradoCliente(vendas,clientes,maioresClientes[i]);
+                    for (int i = 0; i < maioresClientes.length; i++) {
+                        imprimirJogosCompradoCliente(vendas, clientes, maioresClientes[i]);
                     }
                     break;
                 case "g":
-                    String[] maiorCategoriaEvalor = categoriasPorLucroGerado(vendas,comissoes);
+                    String[] maiorCategoriaEvalor = categoriasPorLucroGerado(vendas, comissoes);
                     System.out.println("\nCategoria maior lucro: " + maiorCategoriaEvalor[0]);
                     System.out.println("\nValor gerado: " + maiorCategoriaEvalor[1] + "€\n");
                     break;
                 case "h":
+                    System.out.println("Introduza o jogo a ser pesquisado:");
+                    String jogoPesquisar = inTeclado.nextLine();
+                    String[] clientesJogo = clientesCompraramJogo(vendas, jogoPesquisar);
+                    System.out.println("\nClientes que compraram o jogo: " + jogoPesquisar);
+                    for(int i = 0; i < clientesJogo.length; i++){
+                        String[] cliente = pesquisaCliente(clientes, clientesJogo[i]);
+                        imprimirCliente(cliente);
+                    }
                     break;
                 case "i":
+                    String[][] top5 = getTop5Jogos(vendas,comissoes);
+                    imprimirMatriz(top5, "JOGO: ");
                     break;
                 case "j":
+                    String[][] bottom5Jogos = getBottom5Jogos(vendas,comissoes);
+                    imprimirMatriz(bottom5Jogos, "JOGO: ");
                     break;
                 case "z":
                     break;

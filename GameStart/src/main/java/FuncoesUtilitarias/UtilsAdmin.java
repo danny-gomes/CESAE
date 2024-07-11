@@ -159,7 +159,6 @@ public class UtilsAdmin {
         double[][] clientes = new double[countCliente][2];
 
         for (int i = 0; i < clientes.length; i++) {
-            System.out.println(clientesAux[i][0] + " RRRR " + clientesAux[i][1]);
             clientes[i][0] = clientesAux[i][0];
             clientes[i][1] = clientesAux[i][1];
         }
@@ -170,6 +169,7 @@ public class UtilsAdmin {
     /**
      * Método que vai buscar o cliente ou clientes, em caso de empate, que mais gastaram na
      * loja
+     *
      * @param totalGastoCliente matriz que guarda o id de cliente e o respetivo valor gasto
      *                          em jogos por cada um
      * @return matriz com a lista de clientes que mais dinheiro gastaram
@@ -179,14 +179,14 @@ public class UtilsAdmin {
         double[] maioresClientesAux = new double[totalGastoCliente.length];
         int countAdded = 0;
 
-        for(int i = 0; i < totalGastoCliente.length; i++){
-            if(totalGastoCliente[i][1] > maiorValor) {
+        for (int i = 0; i < totalGastoCliente.length; i++) {
+            if (totalGastoCliente[i][1] > maiorValor) {
                 maiorValor = totalGastoCliente[i][1];
             }
         }
 
-        for(int i = 0; i < totalGastoCliente.length; i++){
-            if(totalGastoCliente[i][1] == maiorValor) {
+        for (int i = 0; i < totalGastoCliente.length; i++) {
+            if (totalGastoCliente[i][1] == maiorValor) {
                 maioresClientesAux[countAdded] = totalGastoCliente[i][0];
                 countAdded++;
             }
@@ -194,7 +194,7 @@ public class UtilsAdmin {
 
         String[] maioresClientes = new String[countAdded];
 
-        for(int i = 0; i < countAdded; i++){
+        for (int i = 0; i < countAdded; i++) {
             // Necessário porque a conversão de double para string faz id ser "1.0" e não "1"
             maioresClientes[i] = Integer.toString((int) maioresClientesAux[i]);
         }
@@ -205,7 +205,8 @@ public class UtilsAdmin {
     /**
      * Método que cria uma matriz igual a comissoes mas com uma terceira coluna adicionada
      * com o valor total vendido pela categoria
-     * @param vendas matriz das vendas.
+     *
+     * @param vendas    matriz das vendas.
      * @param comissoes matriz das comissoes.
      * @returnmatriz igual a comissoes mas com uma terceira coluna adicionada
      * com o valor total vendido pela categoria
@@ -214,16 +215,16 @@ public class UtilsAdmin {
         String[][] comissoesVendas = new String[comissoes.length][comissoes[0].length + 1];
         String[] maiorCategoriaEvalor = new String[2];
 
-        for(int i = 0; i < comissoes.length; i++){
+        for (int i = 0; i < comissoes.length; i++) {
             comissoesVendas[i][0] = comissoes[i][0];
             comissoesVendas[i][1] = comissoes[i][1];
             double zero = 0;
             comissoesVendas[i][2] = Double.toString(zero);
         }
 
-        for(int i = 0; i < vendas.length;i++){
-            for(int h = 0; h < comissoesVendas.length; h++){
-                if(vendas[i][3].equalsIgnoreCase(comissoesVendas[h][0])) {
+        for (int i = 0; i < vendas.length; i++) {
+            for (int h = 0; h < comissoesVendas.length; h++) {
+                if (vendas[i][3].equalsIgnoreCase(comissoesVendas[h][0])) {
                     double valor = Double.parseDouble(comissoesVendas[h][2]) + (Double.parseDouble(vendas[i][5]) * (Double.parseDouble(comissoesVendas[h][1]) / 100.0));
                     double valor2Casas = Math.floor(valor * 100) / 100;
                     comissoesVendas[h][2] = Double.toString(valor2Casas);
@@ -233,19 +234,159 @@ public class UtilsAdmin {
 
         double maiorValor = 0;
 
-        for(int i = 0; i < comissoesVendas.length; i++){
-            if(Double.parseDouble(comissoesVendas[i][2]) > maiorValor){
+        for (int i = 0; i < comissoesVendas.length; i++) {
+            if (Double.parseDouble(comissoesVendas[i][2]) > maiorValor) {
                 maiorValor = Double.parseDouble(comissoesVendas[i][2]);
             }
         }
 
-        for(int i = 0; i < comissoesVendas.length; i++){
-            if(Double.parseDouble(comissoesVendas[i][2]) == maiorValor){
+        for (int i = 0; i < comissoesVendas.length; i++) {
+            if (Double.parseDouble(comissoesVendas[i][2]) == maiorValor) {
                 maiorCategoriaEvalor[0] = comissoesVendas[i][0];
                 maiorCategoriaEvalor[1] = comissoesVendas[i][2];
             }
         }
 
         return maiorCategoriaEvalor;
+    }
+
+    /**
+     * Método que cria um array com os id dos clientes que compraram um jogo passado por parâmetro
+     *
+     * @param vendas matriz das vendas
+     * @param jogo   jogo a ser pesquisado
+     * @return array com o id dos clientes que compraram o jogo
+     */
+    public static String[] clientesCompraramJogo(String[][] vendas, String jogo) {
+        String[] clientesCompraramJogoAux = new String[vendas.length];
+        int clientesAdicionados = 0;
+
+        for (int i = 0; i < vendas.length; i++) {
+            if (vendas[i][4].equalsIgnoreCase(jogo)) {
+                clientesCompraramJogoAux[clientesAdicionados] = vendas[i][1];
+                clientesAdicionados++;
+            }
+        }
+
+        String[] clientesCompramJogo = new String[clientesAdicionados];
+
+        for (int i = 0; i < clientesCompramJogo.length; i++) {
+            clientesCompramJogo[i] = clientesCompraramJogoAux[i];
+        }
+
+        return clientesCompramJogo;
+    }
+
+    public static String[][] gerarMatrizJogosPorLucro(String[][] vendas, String[][] comissoes) {
+        String[][] lucroJogosAux = new String[vendas.length][2];
+        int jogosAdicionados = 0;
+
+        for (int i = 0; i < vendas.length; i++) {
+            boolean added = false;
+            int foundIndex = -1;
+            for (int h = 0; h < lucroJogosAux.length; h++) {
+                if (vendas[i][4].equalsIgnoreCase(lucroJogosAux[h][0])) {
+                    added = true;
+                    foundIndex = h;
+                    break;
+                }
+            }
+            if (added) {
+                double valor = Double.parseDouble(lucroJogosAux[foundIndex][1]) + (Double.parseDouble(vendas[i][5]) * getComissaoCategoriaDecimal(comissoes, vendas[i][3]));
+                double valor2Casas = Math.floor(valor * 100) / 100;
+                lucroJogosAux[foundIndex][1] = Double.toString(valor2Casas);
+            } else {
+                lucroJogosAux[jogosAdicionados][0] = vendas[i][4];
+                lucroJogosAux[jogosAdicionados][1] = vendas[i][5];
+                jogosAdicionados++;
+            }
+        }
+
+        String[][] lucroJogos = new String[jogosAdicionados][2];
+
+        for (int i = 0; i < lucroJogos.length; i++) {
+            lucroJogos[i][0] = lucroJogosAux[i][0];
+            lucroJogos[i][1] = lucroJogosAux[i][1];
+        }
+
+        return lucroJogos;
+    }
+
+    public static String[][] getTop5Jogos(String[][] vendas, String[][] comissoes) {
+        String[][] jogosPorLucro = gerarMatrizJogosPorLucro(vendas, comissoes);
+
+        String[][] top5Jogos = new String[5][2];
+        int countAdicionados = 0;
+        double[] valoresDeLucro = new double[jogosPorLucro.length];
+
+        for (int i = 0; i < jogosPorLucro.length; i++) {
+            valoresDeLucro[i] = Double.parseDouble(jogosPorLucro[i][1]);
+        }
+
+        while (countAdicionados < 5) {
+            double maior = 0;
+            int indiceMaior = 0;
+
+            for (int i = 0; i < valoresDeLucro.length; i++) {
+                if (valoresDeLucro[i] > maior) {
+                    maior = valoresDeLucro[i];
+                    indiceMaior = i;
+                }
+            }
+
+            top5Jogos[countAdicionados][0] = jogosPorLucro[indiceMaior][0];
+            top5Jogos[countAdicionados][1] = jogosPorLucro[indiceMaior][1];
+            valoresDeLucro[indiceMaior] = 0;
+            countAdicionados++;
+        }
+
+        return top5Jogos;
+    }
+
+    public static String[][] getBottom5Jogos(String[][] vendas, String[][] comissoes) {
+        String[][] jogosPorLucro = gerarMatrizJogosPorLucro(vendas, comissoes);
+        String[][] top5Jogos = getTop5Jogos(vendas,comissoes);
+
+        String[][] bottom5Jogos = new String[5][2];
+        int countAdicionados = 0;
+        double[] valoresDeLucro = new double[jogosPorLucro.length];
+
+        for (int i = 0; i < jogosPorLucro.length; i++) {
+            valoresDeLucro[i] = Double.parseDouble(jogosPorLucro[i][1]);
+            System.out.println(jogosPorLucro[i][0] + " RRR " + jogosPorLucro[i][1]);
+        }
+
+        double menor = top5Jogos[];
+
+        while (countAdicionados < 5) {
+
+            int indiceMenor = 0;
+
+            for (int i = 0; i < valoresDeLucro.length; i++) {
+                if (valoresDeLucro[i] < menor && valoresDeLucro[i] != -1) {
+                    menor = valoresDeLucro[i];
+                    indiceMenor = i;
+                }
+            }
+
+            bottom5Jogos[countAdicionados][0] = jogosPorLucro[indiceMenor][0];
+            bottom5Jogos[countAdicionados][1] = jogosPorLucro[indiceMenor][1];
+            valoresDeLucro[indiceMenor] = -1;
+
+            countAdicionados++;
+        }
+
+        return bottom5Jogos;
+    }
+
+
+    private static double getComissaoCategoriaDecimal(String[][] comissoes, String categoria) {
+        for (int i = 0; i < comissoes.length; i++) {
+            if (comissoes[i][0].equalsIgnoreCase(categoria)) {
+                return Double.parseDouble(comissoes[i][1]) / 100.0;
+            }
+        }
+
+        return -1;
     }
 }
