@@ -52,14 +52,38 @@ public class Utils {
      */
     public static void imprimirMatriz(String[][] matriz, String tipoDados) {
         for (int i = 0; i < matriz.length; i++) {
-            for (int h = 0; h < matriz[0].length; h++) {
-                if(h == 0){
-                    System.out.println(tipoDados + ": " + matriz[i][h]);
-                } else {
-                    System.out.println("\t" + matriz[i][h]);
-                }
+            if(tipoDados.equalsIgnoreCase("VENDAS")){
+                System.out.println("Venda:" + matriz[i][0]);
+                System.out.println("\tID Cliente: " + matriz[i][1]);
+                System.out.println("\tCategoria: " + matriz[i][2]);
+                System.out.println("\tJogo: " + matriz[i][3]);
+                System.out.println("\tValor: " + matriz[i][4]);
+                System.out.println("\tValor: " + matriz[i][5] + "€");
+                System.out.println("--------------------------");
+            } else
+
+            if(tipoDados.equalsIgnoreCase("CLIENTES")){
+                System.out.println("ID Cliente:" + matriz[i][0]);
+                System.out.println("\tNome: " + matriz[i][1]);
+                System.out.println("\tTelemóvel: " + matriz[i][2]);
+                System.out.println("\tEmail: " + matriz[i][3]);
+                System.out.println("--------------------------");
+            } else
+
+            if(tipoDados.equalsIgnoreCase("CATEGORIAS")){
+                System.out.println("Categoria: " + matriz[i][0]);
+                System.out.println("Comissão: " + matriz[i][1] + "%");
+                System.out.println("--------------------------");
+
+            } else
+
+            if(tipoDados.equalsIgnoreCase("JOGOS")){
+                System.out.println("Jogo: " + matriz[i][0]);
+                System.out.println("Lucro: " + matriz[i][1] + "€");
+                System.out.println("--------------------------");
+            } else {
+                System.out.println("Tipo Dados Inválido.");
             }
-            System.out.println("-------------------------------");
         }
     }
 

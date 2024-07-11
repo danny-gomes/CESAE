@@ -277,6 +277,12 @@ public class UtilsAdmin {
         return clientesCompramJogo;
     }
 
+    /**
+     * Método que gera uma matriz com duas colunas, jogo na primeira e total de lucro gerado pelo jogo na segunda.
+     * @param vendas matriz de vendas.
+     * @param comissoes matriz de comissoes.
+     * @return a matriz com o jogo e o seu lucro gerado.
+     */
     public static String[][] gerarMatrizJogosPorLucro(String[][] vendas, String[][] comissoes) {
         String[][] lucroJogosAux = new String[vendas.length][2];
         int jogosAdicionados = 0;
@@ -312,6 +318,12 @@ public class UtilsAdmin {
         return lucroJogos;
     }
 
+    /**
+     * Método que devolve uma matriz com os top 5 jogos usando a matriz jogo-lucro.
+     * @param vendas matriz das vendas.
+     * @param comissoes matriz das comissões.
+     * @return matriz com os top 5 jogos e o respetivo lucro gerado.
+     */
     public static String[][] getTop5Jogos(String[][] vendas, String[][] comissoes) {
         String[][] jogosPorLucro = gerarMatrizJogosPorLucro(vendas, comissoes);
 
@@ -343,6 +355,12 @@ public class UtilsAdmin {
         return top5Jogos;
     }
 
+    /**
+     * Método que devolve o bottom 5 jogos usando a matriz jogo-lucro
+     * @param vendas matriz das vendas.
+     * @param comissoes matriz das comissões.
+     * @return matriz com o bottom 5 de jogos e o respetivo lucro gerado.
+     */
     public static String[][] getBottom5Jogos(String[][] vendas, String[][] comissoes) {
         String[][] jogosPorLucro = gerarMatrizJogosPorLucro(vendas, comissoes);
         String[][] top5Jogos = getTop5Jogos(vendas,comissoes);
@@ -380,6 +398,12 @@ public class UtilsAdmin {
     }
 
 
+    /**
+     * Método que devolve a percentagem de comissão de uma dada categoria passada por parâmetro no formato entre 0 e 1
+     * @param comissoes matriz das comissões.
+     * @param categoria categoria a ter a sua comissão devolvida.
+     * @return a comissão da categoria no formato entre 0 e 1, ou -1 se categoria não encontrada.
+     */
     private static double getComissaoCategoriaDecimal(String[][] comissoes, String categoria) {
         for (int i = 0; i < comissoes.length; i++) {
             if (comissoes[i][0].equalsIgnoreCase(categoria)) {

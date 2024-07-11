@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3053502-e771-446f-8bc0-acdccae76993" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Consola/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/UtilsAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/UtilsAdmin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
       <updated>1720533988639</updated>
       <workItem from="1720533991955" duration="3452000" />
       <workItem from="1720722552035" duration="27000" />
-      <workItem from="1720722592156" duration="1866000" />
+      <workItem from="1720722592156" duration="5535000" />
     </task>
     <servers />
   </component>

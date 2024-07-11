@@ -19,21 +19,22 @@ public class Admin {
     public static void menuAdmin(String username, String[][] vendas, String[][] clientes, String[][] comissoes) {
         System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
         System.out.println("\nEscolha uma opção:\n");
-        System.out.println("a. Listagens (Vendas, Clientes, Categorias)");
-        System.out.println("b. Total de Vendas");
-        System.out.println("c. Total de Lucro");
-        System.out.println("d. Pesquisa de Cliente");
-        System.out.println("e. Clientes Compraram Jogo Mais Caro");
-        System.out.println("f. Melhores Clientes");
-        System.out.println("g. Categoria com Mais Lucro");
-        System.out.println("h. Pesquisa Clientes Compraram Jogo");
-        System.out.println("i. Top 5 Jogos (Lucro Gerado)");
-        System.out.println("j. Bottom 5 Jogos (Lucro Gerado)");
-        System.out.println("z. Sair");
+        System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
+        System.out.println("b. \uD83D\uDED2 Total de Vendas");
+        System.out.println("c. \uD83D\uDCB0 Total de Lucro");
+        System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
+        System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
+        System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
+        System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
+        System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");
+        System.out.println("i. \uD83E\uDD47 Top 5 Jogos (Lucro Gerado)");
+        System.out.println("j. \uD83D\uDCC9 Bottom 5 Jogos (Lucro Gerado)");
+        System.out.println("z. ❌ Sair");
 
         Scanner inTeclado = new Scanner(System.in);
 
-        String opcao = inTeclado.nextLine();
+        String opcao = inTeclado.next();
+        inTeclado.nextLine();
         opcao = opcao.toLowerCase();
 
         do {
@@ -43,13 +44,14 @@ public class Admin {
                     System.out.println("2. Clientes");
                     System.out.println("3. Categorias");
                     int escolhaListagem = inTeclado.nextInt();
+                    inTeclado.nextLine();
 
                     if (escolhaListagem == 1) {
-                        imprimirMatriz(vendas, "Venda: ");
+                        imprimirMatriz(vendas, "VENDAS");
                     } else if (escolhaListagem == 2) {
-                        imprimirMatriz(clientes, "Cliente: ");
+                        imprimirMatriz(clientes, "CLIENTES");
                     } else if (escolhaListagem == 3) {
-                        imprimirMatriz(comissoes, "Comisssao: ");
+                        imprimirMatriz(comissoes, "CATEGORIAS");
                     } else {
                         System.out.println("Opção inválida.");
                     }
@@ -65,7 +67,8 @@ public class Admin {
                     break;
                 case "d":
                     System.out.println("Introduza o id a pesquisar.");
-                    String clienteApesquisar = inTeclado.nextLine();
+                    String clienteApesquisar = inTeclado.next();
+                    inTeclado.nextLine();
                     String[] clienteEncontrado = pesquisaCliente(clientes, clienteApesquisar);
                     if (clienteEncontrado == null) {
                         System.out.println("Cliente não encontrado.");
@@ -111,11 +114,11 @@ public class Admin {
                     break;
                 case "i":
                     String[][] top5 = getTop5Jogos(vendas,comissoes);
-                    imprimirMatriz(top5, "JOGO: ");
+                    imprimirMatriz(top5, "JOGOS");
                     break;
                 case "j":
                     String[][] bottom5Jogos = getBottom5Jogos(vendas,comissoes);
-                    imprimirMatriz(bottom5Jogos, "JOGO: ");
+                    imprimirMatriz(bottom5Jogos, "JOGOS");
                     break;
                 case "z":
                     break;
@@ -125,19 +128,20 @@ public class Admin {
 
             System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
             System.out.println("\nEscolha uma opção:\n");
-            System.out.println("a. Listagens (Vendas, Clientes, Categorias)");
-            System.out.println("b. Total de Vendas");
-            System.out.println("c. Total de Lucro");
-            System.out.println("d. Pesquisa de Cliente");
-            System.out.println("e. Jogo Mais Caro");
-            System.out.println("f. Melhores Clientes");
-            System.out.println("g. Categoria com Mais Lucro");
-            System.out.println("h. Pesquisa Vendas de Jogo");
-            System.out.println("i. Top 5 Jogos (Lucro Gerado)");
-            System.out.println("j. Bottom 5 Jogos (Lucro Gerado)");
-            System.out.println("z. Sair");
+            System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
+            System.out.println("b. \uD83D\uDED2 Total de Vendas");
+            System.out.println("c. \uD83D\uDCB0 Total de Lucro");
+            System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
+            System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
+            System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
+            System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
+            System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");
+            System.out.println("i. \uD83E\uDD47 Top 5 Jogos (Lucro Gerado)");
+            System.out.println("j. \uD83D\uDCC9 Bottom 5 Jogos (Lucro Gerado)");
+            System.out.println("z. ❌ Sair");
 
-            opcao = inTeclado.nextLine();
+            opcao = inTeclado.next();
+            inTeclado.nextLine();
         } while (!opcao.equals("z"));
 
     }
