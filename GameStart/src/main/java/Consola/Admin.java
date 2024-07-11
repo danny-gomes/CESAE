@@ -17,7 +17,7 @@ public class Admin {
      * @param comissoes
      */
     public static void menuAdmin(String username, String[][] vendas, String[][] clientes, String[][] comissoes) {
-        System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
+        System.out.println("\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E「 ✦ Bem vindo, " + username + " ✦ 」\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E");
         System.out.println("\nEscolha uma opção:\n");
         System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
         System.out.println("b. \uD83D\uDED2 Total de Vendas");
@@ -107,17 +107,17 @@ public class Admin {
                     String jogoPesquisar = inTeclado.nextLine();
                     String[] clientesJogo = clientesCompraramJogo(vendas, jogoPesquisar);
                     System.out.println("\nClientes que compraram o jogo: " + jogoPesquisar);
-                    for(int i = 0; i < clientesJogo.length; i++){
+                    for (int i = 0; i < clientesJogo.length; i++) {
                         String[] cliente = pesquisaCliente(clientes, clientesJogo[i]);
                         imprimirCliente(cliente);
                     }
                     break;
                 case "i":
-                    String[][] top5 = getTop5Jogos(vendas,comissoes);
+                    String[][] top5 = getTop5Jogos(vendas, comissoes);
                     imprimirMatriz(top5, "JOGOS");
                     break;
                 case "j":
-                    String[][] bottom5Jogos = getBottom5Jogos(vendas,comissoes);
+                    String[][] bottom5Jogos = getBottom5Jogos(vendas, comissoes);
                     imprimirMatriz(bottom5Jogos, "JOGOS");
                     break;
                 case "z":
@@ -126,22 +126,26 @@ public class Admin {
                     System.out.println("Opção inválida.");
             }
 
-            System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
-            System.out.println("\nEscolha uma opção:\n");
-            System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
-            System.out.println("b. \uD83D\uDED2 Total de Vendas");
-            System.out.println("c. \uD83D\uDCB0 Total de Lucro");
-            System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
-            System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
-            System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
-            System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
-            System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");
-            System.out.println("i. \uD83E\uDD47 Top 5 Jogos (Lucro Gerado)");
-            System.out.println("j. \uD83D\uDCC9 Bottom 5 Jogos (Lucro Gerado)");
-            System.out.println("z. ❌ Sair");
+            if(!opcao.equals("z")){
+                System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
+                System.out.println("\nEscolha uma opção:\n");
+                System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
+                System.out.println("b. \uD83D\uDED2 Total de Vendas");
+                System.out.println("c. \uD83D\uDCB0 Total de Lucro");
+                System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
+                System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
+                System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
+                System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
+                System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");
+                System.out.println("i. \uD83E\uDD47 Top 5 Jogos (Lucro Gerado)");
+                System.out.println("j. \uD83D\uDCC9 Bottom 5 Jogos (Lucro Gerado)");
+                System.out.println("z. ❌ Sair");
 
-            opcao = inTeclado.next();
-            inTeclado.nextLine();
+                opcao = inTeclado.next();
+                inTeclado.nextLine();
+            }
+
+
         } while (!opcao.equals("z"));
 
     }
