@@ -50,7 +50,7 @@ public class Utils {
      * @param tipoDados Tipo de dados a ser imprimido (vendas, clientes, etc...)
      *  De denotar o uso de "h" em vez de "j", devido á semelhança com o "i" 👍
      */
-    public static void imprmirMatriz(String[][] matriz, String tipoDados) {
+    public static void imprimirMatriz(String[][] matriz, String tipoDados) {
         for (int i = 0; i < matriz.length; i++) {
             for (int h = 0; h < matriz[0].length; h++) {
                 if(h == 0){
@@ -61,5 +61,44 @@ public class Utils {
             }
             System.out.println("-------------------------------");
         }
+    }
+
+    /**
+     * Método que imprime um cliente
+     * @param cliente o cliente a ser imprimido
+     */
+    public static void imprimirCliente(String[] cliente) {
+        System.out.println("\nID:" + cliente[0]);
+        System.out.println("\tNome:" + cliente[1]);
+        System.out.println("\tTelemóvel:" + cliente[2]);
+        System.out.println("\tEmail:" + cliente[3] + "\n");
+        System.out.println("-----------------------------");
+    }
+
+
+    /**
+     * Método que imprime os jogos comprados por um certo cliente recebido por parâmetro.
+     * @param vendas matriz das vendad.
+     * @param clientes matriz com os clientes.
+     * @param idCliente cliente a ter os jogos impressos.
+     */
+    public static void imprimirJogosCompradoCliente(String[][] vendas, String[][] clientes, String idCliente) {
+        System.out.println("\nCompras " + getNomeClientePorID(clientes,idCliente) + ":\n");
+        for(int i = 0; i < vendas.length; i++){
+            if(vendas[i][1].equalsIgnoreCase(idCliente)) {
+                System.out.println(vendas[i][4]);
+            }
+        }
+        System.out.println();
+    }
+
+    private static String getNomeClientePorID(String[][] clientes, String idCliente) {
+        for(int i = 0; i < clientes.length; i++){
+            if(clientes[i][0].equalsIgnoreCase(idCliente)) {
+                return clientes[i][1];
+            }
+        }
+
+        return null;
     }
 }

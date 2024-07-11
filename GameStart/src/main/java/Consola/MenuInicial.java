@@ -6,11 +6,11 @@ import static Consola.Admin.loginAdmin;
 import static Consola.Admin.menuAdmin;
 import static Consola.Cliente.menuCliente;
 import static Dados.ImportarFicheiros.lerFicheiro;
-import static FuncoesUtilitarias.Utils.imprmirMatriz;
 
 public class MenuInicial {
 
     public static void main(String[] args) {
+
         /*********** DADOS E VARIÁVEIS PERTINENTES ***********/
         String pathVendas = "Dados/GameStart_Vendas.csv";
         String[][] vendas = lerFicheiro(pathVendas, 6, true);
@@ -28,7 +28,6 @@ public class MenuInicial {
 
         Scanner inTeclado = new Scanner(System.in);
         /********************************************/
-
 
         /*********** MENU CLIENTE-ADMIN ***********/
 
@@ -49,7 +48,7 @@ public class MenuInicial {
         System.out.println("2. Cliente \uD83D\uDE4B\uD83C\uDFFB\u200D♂\uFE0F");
 
         opcao = inTeclado.nextInt();
-       // opcao = 1;
+        // opcao = 1;
         // ADICIONAR OPCAO SAIR ?????
 
         while (opcao != 1 && opcao != 2) {
@@ -70,7 +69,7 @@ public class MenuInicial {
 
         /*********** MENU ADMIN ***********/
 
-        if(opcao == 1) {
+        if (opcao == 1) {
             System.out.print("\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB Username: ");
             inTeclado.nextLine();
             String username = inTeclado.nextLine();
@@ -78,19 +77,19 @@ public class MenuInicial {
             System.out.print("\uD83D\uDD12 Password: ");
             String password = inTeclado.nextLine();
 
-            if(loginAdmin(acessoAdmin, username, password)){
-                menuAdmin();
+            if (loginAdmin(acessoAdmin, username, password)) {
+                menuAdmin(username, vendas, clientes, comissoes);
             } else {
-                do{
+                do {
                     System.out.println("\n⛔ LOGIN INVÁLIDO ⛔\n");
                     System.out.print("\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83D\uDCBB Username: ");
                     username = inTeclado.nextLine();
 
                     System.out.print("\uD83D\uDD12 Password: ");
                     password = inTeclado.nextLine();
-                }while(!loginAdmin(acessoAdmin, username, password));
+                } while (!loginAdmin(acessoAdmin, username, password));
 
-                menuAdmin();
+                menuAdmin(username, vendas, clientes, comissoes);
             }
         } else {
             /*********** MENU CLIENTE ***********/
