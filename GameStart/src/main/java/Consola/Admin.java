@@ -23,7 +23,7 @@ public class Admin {
         System.out.println("b. Total de Vendas");
         System.out.println("c. Total de Lucro");
         System.out.println("d. Pesquisa de Cliente");
-        System.out.println("e. Jogo Mais Caro");
+        System.out.println("e. Clientes Compraram Jogo Mais Caro");
         System.out.println("f. Melhores Clientes");
         System.out.println("g. Categoria com Mais Lucro");
         System.out.println("h. Pesquisa Clientes Compraram Jogo");
@@ -42,7 +42,6 @@ public class Admin {
                     System.out.println("1. Vendas");
                     System.out.println("2. Clientes");
                     System.out.println("3. Categorias");
-                    inTeclado.nextLine();
                     int escolhaListagem = inTeclado.nextInt();
 
                     if (escolhaListagem == 1) {
@@ -56,7 +55,7 @@ public class Admin {
                     }
                     break;
                 case "b":
-                    System.out.println("\nVendas efetuadas: " + (vendas.length - 1));
+                    System.out.println("\nVendas efetuadas: " + (vendas.length));
                     System.out.printf("Total vendido: %.2f €", totalVendas(vendas));
                     System.out.println();
                     break;
@@ -78,7 +77,7 @@ public class Admin {
                     String jogoMaisCaro = jogoMaisCaro(vendas);
                     String[] clientesJogoMaisCaro = clientesCompraramMaisCaro(vendas, jogoMaisCaro);
 
-                    System.out.println("Clientes Compraram Jogo Mais Caro: \n");
+                    System.out.println("Clientes Compraram Jogo Mais Caro (" + jogoMaisCaro + "):\n");
                     for (int i = 0; i < clientesJogoMaisCaro.length; i++) {
                         String[] clienteMaisCaro = pesquisaCliente(clientes, clientesJogoMaisCaro[i]);
                         imprimirCliente(clienteMaisCaro);

@@ -297,7 +297,7 @@ public class UtilsAdmin {
                 lucroJogosAux[foundIndex][1] = Double.toString(valor2Casas);
             } else {
                 lucroJogosAux[jogosAdicionados][0] = vendas[i][4];
-                lucroJogosAux[jogosAdicionados][1] = vendas[i][5];
+                lucroJogosAux[jogosAdicionados][1] = Double.toString(Double.parseDouble(vendas[i][5]) * getComissaoCategoriaDecimal(comissoes, vendas[i][3]));
                 jogosAdicionados++;
             }
         }
@@ -353,17 +353,16 @@ public class UtilsAdmin {
 
         for (int i = 0; i < jogosPorLucro.length; i++) {
             valoresDeLucro[i] = Double.parseDouble(jogosPorLucro[i][1]);
-            System.out.println(jogosPorLucro[i][0] + " RRR " + jogosPorLucro[i][1]);
         }
 
-        double menor = top5Jogos[];
+        double menor = Double.parseDouble(top5Jogos[0][1]);
 
         while (countAdicionados < 5) {
 
             int indiceMenor = 0;
 
             for (int i = 0; i < valoresDeLucro.length; i++) {
-                if (valoresDeLucro[i] < menor && valoresDeLucro[i] != -1) {
+                if (valoresDeLucro[i] < menor) {
                     menor = valoresDeLucro[i];
                     indiceMenor = i;
                 }
@@ -371,7 +370,8 @@ public class UtilsAdmin {
 
             bottom5Jogos[countAdicionados][0] = jogosPorLucro[indiceMenor][0];
             bottom5Jogos[countAdicionados][1] = jogosPorLucro[indiceMenor][1];
-            valoresDeLucro[indiceMenor] = -1;
+            valoresDeLucro[indiceMenor] = Double.parseDouble(top5Jogos[0][1]);
+            menor = Double.parseDouble(top5Jogos[0][1]);
 
             countAdicionados++;
         }
