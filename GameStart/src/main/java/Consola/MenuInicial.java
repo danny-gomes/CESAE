@@ -5,6 +5,7 @@ import java.util.Scanner;
 import static Consola.Admin.loginAdmin;
 import static Consola.Admin.menuAdmin;
 import static Consola.Cliente.menuCliente;
+import static Dados.ImportarFicheiros.imprimirFicheiro;
 import static Dados.ImportarFicheiros.lerFicheiro;
 
 public class MenuInicial {
@@ -95,6 +96,8 @@ public class MenuInicial {
             /*********** MENU CLIENTE ***********/
             menuCliente(vendas, clientes, comissoes);
         }
+
+        imprimirFicheiro("Dados/GameStart_Copyright.txt");
 
     }
 }

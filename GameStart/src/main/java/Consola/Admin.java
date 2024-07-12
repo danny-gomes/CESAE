@@ -59,7 +59,7 @@ public class Admin {
                 case "b":
                     System.out.println("\nVendas efetuadas: " + (vendas.length));
                     System.out.printf("Total vendido: %.2f €", totalVendas(vendas));
-                    System.out.println();
+                    System.out.println("\n");
                     break;
                 case "c":
                     System.out.printf("Lucro total: %.2f €\n", lucro(vendas, comissoes));
