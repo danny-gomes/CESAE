@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3053502-e771-446f-8bc0-acdccae76993" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dados/production/GameStart/Consola/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dados/production/GameStart/Consola/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dados/production/GameStart/FuncoesUtilitarias/utilsCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dados/production/GameStart/FuncoesUtilitarias/utilsCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/utilsCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/utilsCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -138,12 +138,12 @@ public class Utils {
     public static void imprimirLugarsVagos(int[] lugaresVagos) {
         System.out.println("LUGARES DISPONIVEIS: ");
         for (int i = 0; i < lugaresVagos.length; i++) {
-            System.out.println("LUGAR " + lugaresVagos[i]);
+            System.out.println("\uD83C\uDD7F\uFE0F LUGAR " + lugaresVagos[i]);
         }
     }
 
     public static void imprimirCatalogo(String[] catalogo) {
-        System.out.println("Os Nossos Jogos: ");
+        System.out.println(" \uD83C\uDFAE \uD83C\uDFAE Os Nossos Jogos: \uD83C\uDFAE \uD83C\uDFAE ");
         for (int i = 0; i < catalogo.length; i++) {
             System.out.println((i + 1) + "." + catalogo[i]);
             System.out.println("-------------------");
@@ -159,7 +159,7 @@ public class Utils {
         for (int i = 0; i < jogosEditora.length; i++) {
             System.out.println(titulo + " " + jogosEditora[i][0] + "\n");
             for (int h = 1; h < jogosEditora[i].length && jogosEditora[i][h] != null; h++) {
-                System.out.println(jogosEditora[i][h]);
+                System.out.println("\uD83C\uDFAE " + jogosEditora[i][h]);
             }
             System.out.println("---------------------------");
         }

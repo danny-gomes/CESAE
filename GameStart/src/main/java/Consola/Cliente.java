@@ -27,16 +27,16 @@ public class Cliente {
         do {
             switch (opcao) {
                 case "a":
-                    System.out.println("Introduza o nome:");
+                    System.out.println(" ✎ Introduza o nome:");
                     String nome = inTeclado.nextLine();
-                    System.out.println("Introduza o email:");
+                    System.out.println(" \uD83D\uDCE7 Introduza o email:");
                     String email = inTeclado.next();
                     inTeclado.nextLine();
-                    System.out.println("Introduza o contacto.");
+                    System.out.println(" \uD83D\uDCDE Introduza o contacto.");
                     String contacto = inTeclado.next();
                     inTeclado.nextLine();
                     String[] novoCliente = simulaRegistoCliente(Double.toString(clientes.length + 1), nome, contacto, email);
-                    System.out.println("CLIENTE REGISTADO COM SUCESSO");
+                    System.out.println("✅ CLIENTE REGISTADO COM SUCESSO ✅");
                     imprimirCliente(novoCliente);
                     break;
                 case "b":
@@ -48,16 +48,16 @@ public class Cliente {
                     imprimirCatalogo(catalogo);
                     break;
                 case "d":
-                    System.out.println("Escolha o catálogo a imprimir.");
+                    System.out.println(" \uD83D\uDCDA Escolha o catálogo a imprimir.");
                     int opcaoCat = 0;
                     do {
-                        System.out.println("1 - Call of Duty");
-                        System.out.println("2 - Hollow Knight");
-                        System.out.println("3 - Fifa");
-                        System.out.println("4 - Mortal Kombat");
-                        System.out.println("5 - Overcooked");
-                        System.out.println("6 - Witcher 3: Wild Hunt");
-                        System.out.println("7 - Minecraft");
+                        System.out.println("1 - Call of Duty \uD83D\uDD2B");
+                        System.out.println("2 - Hollow Knight \uD83D\uDC80");
+                        System.out.println("3 - Fifa ⚽");
+                        System.out.println("4 - Mortal Kombat \uD83E\uDD4B");
+                        System.out.println("5 - Overcooked \uD83E\uDD58");
+                        System.out.println("6 - Witcher 3: Wild Hunt \uD83D\uDD2E");
+                        System.out.println("7 - Minecraft \uD83D\uDC8E");
                         opcaoCat = inTeclado.nextInt();
                         inTeclado.nextLine();
                     } while (opcaoCat < 1 || opcaoCat > 8);
@@ -89,33 +89,32 @@ public class Cliente {
                     }
                     break;
                 case "e":
-                    System.out.println("Introduza a editora a pesquisar.");
+                    System.out.println("\uD83D\uDD8B\uFE0F Introduza a editora a pesquisar.");
                     String editora = inTeclado.nextLine();
                     String[][] jogosPorCategoriaEditora = jogosEditora(vendas, editora);
                     if (jogosPorCategoriaEditora == null) {
-                        System.out.println("Categoria não encontrada.");
+                        System.out.println("❌ Editora não encontrada. ❌");
                     } else {
-                        imprimirJogosPorEditora(jogosPorCategoriaEditora, "CATEGORIA:");
+                        imprimirJogosPorEditora(jogosPorCategoriaEditora, "\uD83D\uDC7E CATEGORIA:");
                     }
                     break;
                 case "f":
-                    System.out.println("Introduza a categoria a pesquisar.");
+                    System.out.println("\uD83D\uDC7E Introduza a categoria a pesquisar.");
                     String categoria = inTeclado.nextLine();
                     String[][] jogosPorEditoraCategoria = jogosCategoria(vendas, categoria);
                     if (jogosPorEditoraCategoria == null) {
-                        System.out.println("Categoria não encontrada.");
+                        System.out.println("❌ Categoria não encontrada. ❌");
                     } else {
-                        imprimirJogosPorEditora(jogosPorEditoraCategoria, "EDITORA:");
+                        imprimirJogosPorEditora(jogosPorEditoraCategoria, "\uD83D\uDD8B\uFE0F EDITORA:");
                     }
                     break;
                 case "g":
-                    System.out.println("Jogo Mais Recente: " + getJogoMaisRecente(vendas));
+                    System.out.println("\uD83C\uDD95\uD83C\uDD95 Jogo Mais Recente: " + getJogoMaisRecente(vendas) + "\uD83C\uDD95\uD83C\uDD95");
                     break;
                 case "z":
-                    System.out.println("Ainda não implementado.");
                     break;
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("❌ Opção inválida. ❌");
             }
 
             if (!opcao.equals("z")) {
