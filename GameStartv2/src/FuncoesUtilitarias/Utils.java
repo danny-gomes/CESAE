@@ -54,30 +54,30 @@ public class Utils {
     public static void imprimirMatriz(String[][] matriz, String tipoDados) {
         for (int i = 0; i < matriz.length; i++) {
             if (tipoDados.equalsIgnoreCase("VENDAS")) {
-                System.out.println("Venda:" + matriz[i][0]);
-                System.out.println("\tID Cliente: " + matriz[i][1]);
-                System.out.println("\tCategoria: " + matriz[i][2]);
-                System.out.println("\tJogo: " + matriz[i][3]);
-                System.out.println("\tValor: " + matriz[i][4]);
-                System.out.println("\tValor: " + matriz[i][5] + "€");
+                System.out.println("\uD83C\uDFF7\uFE0F Venda:" + matriz[i][0]);
+                System.out.println("\t\uD83C\uDD94 ID Cliente: " + matriz[i][1]);
+                System.out.println("\t\uD83D\uDD8B\uFE0F Editora: " + matriz[i][2]);
+                System.out.println("\t\uD83D\uDC7E Categoria: " + matriz[i][3]);
+                System.out.println("\t\uD83C\uDFAE Jogo: " + matriz[i][4]);
+                System.out.println("\t\uD83D\uDCB2 Valor: " + matriz[i][5] + "€");
                 System.out.println("--------------------------");
             } else if (tipoDados.equalsIgnoreCase("CLIENTES")) {
-                System.out.println("ID Cliente:" + matriz[i][0]);
-                System.out.println("\tNome: " + matriz[i][1]);
-                System.out.println("\tTelemóvel: " + matriz[i][2]);
-                System.out.println("\tEmail: " + matriz[i][3]);
+                System.out.println("\uD83C\uDD94 ID Cliente:" + matriz[i][0]);
+                System.out.println("\t\uD83D\uDE4D\u200D♂\uFE0F Nome: " + matriz[i][1]);
+                System.out.println("\t\uD83D\uDCDE Telemóvel: " + matriz[i][2]);
+                System.out.println("\t\uD83D\uDCE7 Email: " + matriz[i][3]);
                 System.out.println("--------------------------");
             } else if (tipoDados.equalsIgnoreCase("CATEGORIAS")) {
-                System.out.println("Categoria: " + matriz[i][0]);
-                System.out.println("Comissão: " + matriz[i][1] + "%");
+                System.out.println("\uD83D\uDC7E Categoria: " + matriz[i][0]);
+                System.out.println("\uD83C\uDFF7\uFE0F Comissão: " + matriz[i][1] + "%");
                 System.out.println("--------------------------");
 
             } else if (tipoDados.equalsIgnoreCase("JOGOS")) {
-                System.out.println("Jogo: " + matriz[i][0]);
-                System.out.println("Lucro: " + matriz[i][1] + "€");
+                System.out.println("\uD83C\uDFAE Jogo: " + matriz[i][0]);
+                System.out.println("\uD83E\uDD11 Lucro: " + matriz[i][1] + "€");
                 System.out.println("--------------------------");
             } else {
-                System.out.println("Tipo Dados Inválido.");
+                System.out.println("❌ Tipo Dados Inválido. ❌");
             }
         }
     }
@@ -88,10 +88,10 @@ public class Utils {
      * @param cliente o cliente a ser imprimido
      */
     public static void imprimirCliente(String[] cliente) {
-        System.out.println("\nID:" + cliente[0]);
-        System.out.println("\tNome:" + cliente[1]);
-        System.out.println("\tTelemóvel:" + cliente[2]);
-        System.out.println("\tEmail:" + cliente[3] + "\n");
+        System.out.println("\n\uD83C\uDD94 ID:" + cliente[0]);
+        System.out.println("\t\uD83D\uDE4D\u200D♂\uFE0F Nome:" + cliente[1]);
+        System.out.println("\t\uD83D\uDCDE Telemóvel:" + cliente[2]);
+        System.out.println("\t\uD83D\uDCE7 Email:" + cliente[3] + "\n");
         System.out.println("-----------------------------");
     }
 
@@ -104,10 +104,10 @@ public class Utils {
      * @param idCliente cliente a ter os jogos impressos.
      */
     public static void imprimirJogosCompradoCliente(String[][] vendas, String[][] clientes, String idCliente) {
-        System.out.println("\nCompras " + getNomeClientePorID(clientes, idCliente) + ":\n");
+        System.out.println("\n\uD83C\uDFC6 Compras " + getNomeClientePorID(clientes, idCliente) + ":\n");
         for (int i = 0; i < vendas.length; i++) {
             if (vendas[i][1].equalsIgnoreCase(idCliente)) {
-                System.out.println(vendas[i][4]);
+                System.out.println("\uD83C\uDFAE " + vendas[i][4]);
             }
         }
         System.out.println();

@@ -17,8 +17,8 @@ public class Admin {
      * @param comissoes
      */
     public static void menuAdmin(String username, String[][] vendas, String[][] clientes, String[][] comissoes) {
-        System.out.println("\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E「 ✦ Bem vindo, " + username + " ✦ 」\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E");
-        System.out.println("\nEscolha uma opção:\n");
+        System.out.println("\n\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E「 ✦ Bem vindo, " + username + " ✦ 」\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E");
+        System.out.println("\n\uD83E\uDD14 Escolha uma opção:\n");
         System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
         System.out.println("b. \uD83D\uDED2 Total de Vendas");
         System.out.println("c. \uD83D\uDCB0 Total de Lucro");
@@ -57,12 +57,12 @@ public class Admin {
                     }
                     break;
                 case "b":
-                    System.out.println("\nVendas efetuadas: " + (vendas.length));
-                    System.out.printf("Total vendido: %.2f €", totalVendas(vendas));
+                    System.out.println("\n\uD83E\uDD1D Vendas efetuadas: " + (vendas.length));
+                    System.out.printf("\uD83D\uDCB0 Total vendido: %.2f €", totalVendas(vendas));
                     System.out.println("\n");
                     break;
                 case "c":
-                    System.out.printf("Lucro total: %.2f €\n", lucro(vendas, comissoes));
+                    System.out.printf("\uD83E\uDD11 Lucro total: %.2f €\n", lucro(vendas, comissoes));
                     System.out.println();
                     break;
                 case "d":
@@ -99,14 +99,14 @@ public class Admin {
                     break;
                 case "g":
                     String[] maiorCategoriaEvalor = categoriasPorLucroGerado(vendas, comissoes);
-                    System.out.println("\nCategoria maior lucro: " + maiorCategoriaEvalor[0]);
-                    System.out.println("\nValor gerado: " + maiorCategoriaEvalor[1] + "€\n");
+                    System.out.println("\n\uD83D\uDC7E Categoria maior lucro: " + maiorCategoriaEvalor[0]);
+                    System.out.println("\n\uD83E\uDD11 Valor gerado: " + maiorCategoriaEvalor[1] + "€\n");
                     break;
                 case "h":
-                    System.out.println("Introduza o jogo a ser pesquisado:");
+                    System.out.println("\uD83C\uDFAE Introduza o jogo a ser pesquisado:");
                     String jogoPesquisar = inTeclado.nextLine();
                     String[] clientesJogo = clientesCompraramJogo(vendas, jogoPesquisar);
-                    System.out.println("\nClientes que compraram o jogo: " + jogoPesquisar);
+                    System.out.println("\n\uD83D\uDC65 Clientes que compraram o jogo: " + jogoPesquisar);
                     for (int i = 0; i < clientesJogo.length; i++) {
                         String[] cliente = pesquisaCliente(clientes, clientesJogo[i]);
                         imprimirCliente(cliente);
@@ -127,8 +127,8 @@ public class Admin {
             }
 
             if(!opcao.equals("z")){
-                System.out.println("「 ✦ Bem vindo, " + username + " ✦ 」");
-                System.out.println("\nEscolha uma opção:\n");
+                System.out.println("\n\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E「 ✦ Bem vindo, " + username + " ✦ 」\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E");
+                System.out.println("\n\uD83E\uDD14 Escolha uma opção:\n");
                 System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
                 System.out.println("b. \uD83D\uDED2 Total de Vendas");
                 System.out.println("c. \uD83D\uDCB0 Total de Lucro");

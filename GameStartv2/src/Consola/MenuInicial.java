@@ -44,7 +44,7 @@ public class MenuInicial {
                 "                                                                \n");
 
         System.out.println("「 ✦ Bem-vindo á aplicação de gestão da GameStart ✦ 」");
-        System.out.println("Escolha uma opção:\n");
+        System.out.println("\uD83E\uDD14 Escolha uma opção:\n");
         System.out.println("1. Admin \uD83D\uDEE0\uFE0F");
         System.out.println("2. Cliente \uD83D\uDE4B\uD83C\uDFFB\u200D♂\uFE0F");
 

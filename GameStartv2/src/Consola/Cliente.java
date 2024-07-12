@@ -9,7 +9,7 @@ import static FuncoesUtilitarias.UtilsCliente.*;
 public class Cliente {
     public static void menuCliente(String[][] vendas, String[][] clientes, String[][] comissoes) {
         System.out.println("\n\uD83C\uDFAE\uD83D\uDD79\uFE0F\uD83D\uDC7E「 ✦ Bem-vindo á GameStart! ✦ 」\uD83C\uDFAE\uD83D\uDD79\uFE0F\uD83D\uDC7E\n");
-        System.out.println("Escolha uma opção:");
+        System.out.println("\uD83E\uDD14 Escolha uma opção:");
         System.out.println("a. ✍\uFE0F Novo Registo");
         System.out.println("b. \uD83C\uDD7F\uFE0F Procurar Estacionamento");
         System.out.println("c. \uD83D\uDCCB Imprimir Catálogo");
@@ -23,7 +23,7 @@ public class Cliente {
         String opcao = inTeclado.next();
         inTeclado.nextLine();
         opcao = opcao.toLowerCase();
-
+        int countClientes = clientes.length;
         do {
             switch (opcao) {
                 case "a":
@@ -35,8 +35,9 @@ public class Cliente {
                     System.out.println(" \uD83D\uDCDE Introduza o contacto.");
                     String contacto = inTeclado.next();
                     inTeclado.nextLine();
-                    String[] novoCliente = simulaRegistoCliente(Double.toString(clientes.length + 1), nome, contacto, email);
-                    System.out.println("✅ CLIENTE REGISTADO COM SUCESSO ✅");
+                    countClientes++;
+                    String[] novoCliente = simulaRegistoCliente(Double.toString(countClientes), nome, contacto, email);
+                    System.out.println("\n✅ CLIENTE REGISTADO COM SUCESSO ✅");
                     imprimirCliente(novoCliente);
                     break;
                 case "b":
@@ -109,7 +110,7 @@ public class Cliente {
                     }
                     break;
                 case "g":
-                    System.out.println("\uD83C\uDD95\uD83C\uDD95 Jogo Mais Recente: " + getJogoMaisRecente(vendas) + "\uD83C\uDD95\uD83C\uDD95");
+                    System.out.println("\n\uD83C\uDD95\uD83C\uDD95 Jogo Mais Recente: " + getJogoMaisRecente(vendas) + "\uD83C\uDD95\uD83C\uDD95");
                     break;
                 case "z":
                     break;
@@ -119,7 +120,7 @@ public class Cliente {
 
             if (!opcao.equals("z")) {
                 System.out.println("\n\uD83C\uDFAE\uD83D\uDD79\uFE0F\uD83D\uDC7E「 ✦ Bem-vindo á GameStart! ✦ 」\uD83C\uDFAE\uD83D\uDD79\uFE0F\uD83D\uDC7E\n");
-                System.out.println("Escolha uma opção:");
+                System.out.println("\uD83E\uDD14 Escolha uma opção:");
                 System.out.println("a. ✍\uFE0F Novo Registo");
                 System.out.println("b. \uD83C\uDD7F\uFE0F Procurar Estacionamento");
                 System.out.println("c. \uD83D\uDCCB Imprimir Catálogo");
