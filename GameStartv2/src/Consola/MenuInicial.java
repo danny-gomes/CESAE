@@ -5,8 +5,8 @@ import java.util.Scanner;
 import static Consola.Admin.loginAdmin;
 import static Consola.Admin.menuAdmin;
 import static Consola.Cliente.menuCliente;
-import static Dados.ImportarFicheiros.imprimirFicheiro;
-import static Dados.ImportarFicheiros.lerFicheiro;
+import static LeituraEscrita.ImportarFicheiros.imprimirFicheiro;
+import static LeituraEscrita.ImportarFicheiros.lerFicheiro;
 
 public class MenuInicial {
 

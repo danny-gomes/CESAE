@@ -2,7 +2,7 @@ package Consola;
 
 import java.util.Scanner;
 
-import static Dados.ImportarFicheiros.imprimirFicheiro;
+import static LeituraEscrita.ImportarFicheiros.imprimirFicheiro;
 import static FuncoesUtilitarias.Utils.*;
 import static FuncoesUtilitarias.UtilsCliente.*;
 

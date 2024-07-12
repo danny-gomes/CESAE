@@ -1,6 +1,6 @@
 package FuncoesUtilitarias;
 
-public class utilsCliente {
+public class UtilsCliente {
 
     /**
      * Função que simula o registo de um cliente e retorna-o.

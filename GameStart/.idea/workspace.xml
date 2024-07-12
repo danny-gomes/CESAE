@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3053502-e771-446f-8bc0-acdccae76993" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dados/production/GameStart/FuncoesUtilitarias/utilsCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dados/production/GameStart/FuncoesUtilitarias/utilsCliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consola/MenuInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consola/MenuInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/utilsCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FuncoesUtilitarias/UtilsCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
