@@ -56,4 +56,26 @@ public class ImportarFicheiros {
 
         return null;
     }
+
+    /**
+     * Método que receb o caminho para um ficheiro e imprime-o
+     * @param path caminho para o ficheiro a ser imprimido.
+     */
+    public static void imprimirFicheiro(String path){
+        try{
+            Scanner lerFicheiro = new Scanner(new File(path));
+
+            while(lerFicheiro.hasNextLine()) {
+                System.out.println(lerFicheiro.nextLine());
+            }
+
+            lerFicheiro.close();
+        } catch (FileNotFoundException e) {
+            System.err.println("FileNotFoundException");
+            System.err.println("ERRO NO METODO imprimirFicheiro.");
+            System.err.println("PACKAGE: LeituraEscrita");
+            System.err.println("CLASS: ImportarFicheiros");
+            System.err.println("FICHEIRO: " + path);
+        }
+    }
 }

@@ -6,7 +6,6 @@ import static Consola.Admin.loginAdmin;
 import static Consola.Admin.menuAdmin;
 import static Consola.Cliente.menuCliente;
 import static Dados.ImportarFicheiros.lerFicheiro;
-import static FuncoesUtilitarias.Utils.imprimirMatriz;
 
 public class MenuInicial {
 
@@ -94,7 +93,7 @@ public class MenuInicial {
             }
         } else {
             /*********** MENU CLIENTE ***********/
-            menuCliente();
+            menuCliente(vendas, clientes, comissoes);
         }
 
     }
