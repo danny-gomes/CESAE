@@ -107,7 +107,7 @@ public class utilsCliente {
                     if(vendas[i][3].equals(jogosCategoriaAux[h][0])){
                         addedCat = true;
                         for(int z = 0; z < jogosCategoriaAux[i].length; z++){
-                            if(vendas[i][4].equals(jogosCategoriaAux[i][z])) {
+                            if(vendas[i][4].equals(jogosCategoriaAux[h][z])) {
                                 addedJogo = true;
                                 break;
                             }
@@ -166,7 +166,7 @@ public class utilsCliente {
                     if(vendas[i][2].equals(jogosEditoraAux[h][0])){
                         addedEdi = true;
                         for(int z = 0; z < jogosEditoraAux[i].length; z++){
-                            if(vendas[i][4].equals(jogosEditoraAux[i][z])) {
+                            if(vendas[i][4].equals(jogosEditoraAux[h][z])) {
                                 addedJogo = true;
                                 break;
                             }
