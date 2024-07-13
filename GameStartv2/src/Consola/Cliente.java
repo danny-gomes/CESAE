@@ -42,10 +42,12 @@ public class Cliente {
                     break;
                 case "b":
                     int[] lugaresVagos = lugaresVagos();
+                    System.out.println();
                     imprimirLugarsVagos(lugaresVagos);
                     break;
                 case "c":
                     String[] catalogo = getCatalogo(vendas);
+                    System.out.println();
                     imprimirCatalogo(catalogo);
                     break;
                 case "d":
@@ -92,25 +94,27 @@ public class Cliente {
                 case "e":
                     System.out.println("\uD83D\uDD8B\uFE0F Introduza a editora a pesquisar.");
                     String editora = inTeclado.nextLine();
+                    System.out.println();
                     String[][] jogosPorCategoriaEditora = jogosEditora(vendas, editora);
                     if (jogosPorCategoriaEditora == null) {
                         System.out.println("❌ Editora não encontrada. ❌");
                     } else {
-                        imprimirJogosPorEditora(jogosPorCategoriaEditora, "\uD83D\uDC7E CATEGORIA:");
+                        imprimirJogosPorEditoraOuCategoria(jogosPorCategoriaEditora, "\uD83D\uDC7E CATEGORIA:");
                     }
                     break;
                 case "f":
                     System.out.println("\uD83D\uDC7E Introduza a categoria a pesquisar.");
                     String categoria = inTeclado.nextLine();
                     String[][] jogosPorEditoraCategoria = jogosCategoria(vendas, categoria);
+                    System.out.println();
                     if (jogosPorEditoraCategoria == null) {
                         System.out.println("❌ Categoria não encontrada. ❌");
                     } else {
-                        imprimirJogosPorEditora(jogosPorEditoraCategoria, "\uD83D\uDD8B\uFE0F EDITORA:");
+                        imprimirJogosPorEditoraOuCategoria(jogosPorEditoraCategoria, "\uD83D\uDD8B\uFE0F EDITORA:");
                     }
                     break;
                 case "g":
-                    System.out.println("\n\uD83C\uDD95\uD83C\uDD95 Jogo Mais Recente: " + getJogoMaisRecente(vendas) + "\uD83C\uDD95\uD83C\uDD95");
+                    System.out.println("\n\uD83C\uDD95\uD83C\uDD95 Jogo Mais Recente: " + getJogoMaisRecente(vendas) + " \uD83C\uDD95\uD83C\uDD95");
                     break;
                 case "z":
                     break;

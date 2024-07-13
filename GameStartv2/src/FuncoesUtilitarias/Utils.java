@@ -104,13 +104,12 @@ public class Utils {
      * @param idCliente cliente a ter os jogos impressos.
      */
     public static void imprimirJogosCompradoCliente(String[][] vendas, String[][] clientes, String idCliente) {
-        System.out.println("\n\uD83C\uDFC6 Compras " + getNomeClientePorID(clientes, idCliente) + ":\n");
         for (int i = 0; i < vendas.length; i++) {
             if (vendas[i][1].equalsIgnoreCase(idCliente)) {
                 System.out.println("\uD83C\uDFAE " + vendas[i][4]);
             }
         }
-        System.out.println();
+        System.out.println("-----------------------------");
     }
 
     /**
@@ -143,10 +142,10 @@ public class Utils {
     }
 
     public static void imprimirCatalogo(String[] catalogo) {
-        System.out.println(" \uD83C\uDFAE \uD83C\uDFAE Os Nossos Jogos: \uD83C\uDFAE \uD83C\uDFAE ");
+        System.out.println(" \uD83C\uDFAE \uD83C\uDFAE Os Nossos Jogos: \uD83C\uDFAE \uD83C\uDFAE \n");
         for (int i = 0; i < catalogo.length; i++) {
-            System.out.println((i + 1) + "." + catalogo[i]);
-            System.out.println("-------------------");
+            System.out.println((i + 1) + ". " + catalogo[i]);
+            System.out.println("--------------------------");
         }
     }
 
@@ -155,11 +154,11 @@ public class Utils {
      * e as restantes os respetivos jogos.
      * @param jogosEditora a matriz com os jogos por categoria de uma editora.
      */
-    public static void imprimirJogosPorEditora(String[][] jogosEditora, String titulo) {
+    public static void imprimirJogosPorEditoraOuCategoria(String[][] jogosEditora, String titulo) {
         for (int i = 0; i < jogosEditora.length; i++) {
             System.out.println(titulo + " " + jogosEditora[i][0] + "\n");
             for (int h = 1; h < jogosEditora[i].length && jogosEditora[i][h] != null; h++) {
-                System.out.println("\uD83C\uDFAE " + jogosEditora[i][h]);
+                System.out.println("\t\uD83C\uDFAE " + jogosEditora[i][h]);
             }
             System.out.println("---------------------------");
         }

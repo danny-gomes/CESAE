@@ -23,7 +23,7 @@ public class Admin {
         System.out.println("b. \uD83D\uDED2 Total de Vendas");
         System.out.println("c. \uD83D\uDCB0 Total de Lucro");
         System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
-        System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
+        System.out.println("e. \uD83E\uDD11 Clientes que Compraram Jogo Mais Caro");
         System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
         System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
         System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");
@@ -40,9 +40,9 @@ public class Admin {
         do {
             switch (opcao) {
                 case "a":
-                    System.out.println("1. Vendas");
-                    System.out.println("2. Clientes");
-                    System.out.println("3. Categorias");
+                    System.out.println("\n1. \uD83C\uDFF7\uFE0F Vendas ");
+                    System.out.println("2. \uD83D\uDE4D\u200D Clientes");
+                    System.out.println("3. \uD83D\uDC7E Categorias");
                     int escolhaListagem = inTeclado.nextInt();
                     inTeclado.nextLine();
 
@@ -53,7 +53,7 @@ public class Admin {
                     } else if (escolhaListagem == 3) {
                         imprimirMatriz(comissoes, "CATEGORIAS");
                     } else {
-                        System.out.println("Opção inválida.");
+                        System.out.println("❌ Opção inválida. ❌");
                     }
                     break;
                 case "b":
@@ -62,16 +62,16 @@ public class Admin {
                     System.out.println("\n");
                     break;
                 case "c":
-                    System.out.printf("\uD83E\uDD11 Lucro total: %.2f €\n", lucro(vendas, comissoes));
+                    System.out.printf("\n\uD83E\uDD11 Lucro total: %.2f €\n", lucro(vendas, comissoes));
                     System.out.println();
                     break;
                 case "d":
-                    System.out.println("Introduza o id a pesquisar.");
+                    System.out.println("\n\uD83D\uDD0E Introduza o id a pesquisar.");
                     String clienteApesquisar = inTeclado.next();
                     inTeclado.nextLine();
                     String[] clienteEncontrado = pesquisaCliente(clientes, clienteApesquisar);
                     if (clienteEncontrado == null) {
-                        System.out.println("Cliente não encontrado.");
+                        System.out.println("\n❌ Cliente não encontrado. ❌");
                     } else {
                         imprimirCliente(clienteEncontrado);
                     }
@@ -80,7 +80,7 @@ public class Admin {
                     String jogoMaisCaro = jogoMaisCaro(vendas);
                     String[] clientesJogoMaisCaro = clientesCompraramMaisCaro(vendas, jogoMaisCaro);
 
-                    System.out.println("Clientes Compraram Jogo Mais Caro (" + jogoMaisCaro + "):\n");
+                    System.out.println("\n\uD83D\uDCB8 Clientes que Compraram Jogo Mais Caro (" + jogoMaisCaro + "):\n");
                     for (int i = 0; i < clientesJogoMaisCaro.length; i++) {
                         String[] clienteMaisCaro = pesquisaCliente(clientes, clientesJogoMaisCaro[i]);
                         imprimirCliente(clienteMaisCaro);
@@ -93,9 +93,18 @@ public class Admin {
                     // 91;Daniel Gomes;910000097;costuras.gomes@gmail.com
                     double[][] comprasClientes = totalGastoPorCliente(vendas);
                     String[] maioresClientes = melhorClientes(comprasClientes);
+                    if(maioresClientes.length > 1){
+                        System.out.println("\n\uD83C\uDFC6 Melhores clientes: ");
+
+                    } else {
+                        System.out.println("\n\uD83C\uDFC6 Melhor cliente: ");
+                    }
+
                     for (int i = 0; i < maioresClientes.length; i++) {
+                        imprimirCliente(pesquisaCliente(clientes, maioresClientes[i]));
                         imprimirJogosCompradoCliente(vendas, clientes, maioresClientes[i]);
                     }
+
                     break;
                 case "g":
                     String[] maiorCategoriaEvalor = categoriasPorLucroGerado(vendas, comissoes);
@@ -106,18 +115,24 @@ public class Admin {
                     System.out.println("\uD83C\uDFAE Introduza o jogo a ser pesquisado:");
                     String jogoPesquisar = inTeclado.nextLine();
                     String[] clientesJogo = clientesCompraramJogo(vendas, jogoPesquisar);
-                    System.out.println("\n\uD83D\uDC65 Clientes que compraram o jogo: " + jogoPesquisar);
-                    for (int i = 0; i < clientesJogo.length; i++) {
-                        String[] cliente = pesquisaCliente(clientes, clientesJogo[i]);
-                        imprimirCliente(cliente);
+                    if (clientesJogo.length == 0) {
+                        System.out.println("\n❌  Nenhum cliente compro o jogo: " + jogoPesquisar + " ❌");
+                    } else {
+                        System.out.println("\n\uD83D\uDC65 Clientes que compraram o jogo: " + jogoPesquisar);
+                        for (int i = 0; i < clientesJogo.length; i++) {
+                            String[] cliente = pesquisaCliente(clientes, clientesJogo[i]);
+                            imprimirCliente(cliente);
+                        }
                     }
                     break;
                 case "i":
                     String[][] top5 = getTop5Jogos(vendas, comissoes);
+                    System.out.println();
                     imprimirMatriz(top5, "JOGOS");
                     break;
                 case "j":
                     String[][] bottom5Jogos = getBottom5Jogos(vendas, comissoes);
+                    System.out.println();
                     imprimirMatriz(bottom5Jogos, "JOGOS");
                     break;
                 case "z":
@@ -126,14 +141,14 @@ public class Admin {
                     System.out.println("Opção inválida.");
             }
 
-            if(!opcao.equals("z")){
+            if (!opcao.equals("z")) {
                 System.out.println("\n\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E「 ✦ Bem vindo, " + username + " ✦ 」\uD83D\uDC7E\uD83D\uDD27\uD83D\uDC7E");
                 System.out.println("\n\uD83E\uDD14 Escolha uma opção:\n");
                 System.out.println("a. \uD83D\uDCDD Listagens (Vendas, Clientes, Categorias)");
                 System.out.println("b. \uD83D\uDED2 Total de Vendas");
                 System.out.println("c. \uD83D\uDCB0 Total de Lucro");
                 System.out.println("d. \uD83D\uDC64 Pesquisa de Cliente");
-                System.out.println("e. \uD83E\uDD11 Clientes Compraram Jogo Mais Caro");
+                System.out.println("e. \uD83E\uDD11 Clientes que Compraram Jogo Mais Caro");
                 System.out.println("f. \uD83C\uDFC6 Melhores Clientes");
                 System.out.println("g. \uD83D\uDCC8 Categoria com Mais Lucro");
                 System.out.println("h. \uD83D\uDD0E Pesquisa Clientes Compraram Jogo");

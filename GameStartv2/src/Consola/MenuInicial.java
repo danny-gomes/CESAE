@@ -49,6 +49,7 @@ public class MenuInicial {
         System.out.println("2. Cliente \uD83D\uDE4B\uD83C\uDFFB\u200D♂\uFE0F");
 
         opcao = inTeclado.nextInt();
+        int numTentativasAdmin = 0;
         // opcao = 1;
 
         while (opcao != 1 && opcao != 2) {
@@ -77,6 +78,8 @@ public class MenuInicial {
             System.out.print("\uD83D\uDD12 Password: ");
             String password = inTeclado.nextLine();
 
+            numTentativasAdmin++;
+
             if (loginAdmin(acessoAdmin, username, password)) {
                 menuAdmin(username, vendas, clientes, comissoes);
             } else {
@@ -87,9 +90,19 @@ public class MenuInicial {
 
                     System.out.print("\uD83D\uDD12 Password: ");
                     password = inTeclado.nextLine();
+                    numTentativasAdmin++;
+
+                    if(numTentativasAdmin == 3){
+                        break;
+                    }
                 } while (!loginAdmin(acessoAdmin, username, password));
 
-                menuAdmin(username, vendas, clientes, comissoes);
+                if(loginAdmin(acessoAdmin, username, password)){
+                    menuAdmin(username, vendas, clientes, comissoes);
+                } else {
+                    System.out.println("\nJá chega vai descansar, campeão. (≖_≖ )\n");
+                }
+
             }
         } else {
             /*********** MENU CLIENTE ***********/
